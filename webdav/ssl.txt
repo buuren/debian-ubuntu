@@ -1,0 +1,5 @@
+cd /etc/apache2/
+openssl req -nodes -new -keyout ubuntu64.key -newkey rsa:1024 > ubuntu64.csr 
+openssl x509 -req -days 3650 -in ubuntu64.csr -signkey ubuntu64.key -out ubuntu64.crt
+openssl x509 -in ubuntu64.crt -noout -text
+a2enmod ssl
