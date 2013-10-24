@@ -1,0 +1,24 @@
+1. Download CNTLM from http://sourceforge.net/projects/cntlm/files/cntlm/
+2. Install deb file: dpkg -i cntlm.deb
+3. Change params in /etc/cntlm.conf (leave password blank)
+
+Save and close.
+
+4. enter cntlm -v -H -c /etc/cntlm.conf and type your proxy password
+5. Copy 3 lines: PassLM, PassNT, PassNTLMv2 to cntlm.conf
+6. try to restart cntlm: cntlm -c /etc/cntlm.conf
+8. If you get error -> tail /var/log/syslog. Most likely it will say that cntlm failed to start becase the port is in use.
+9. Solution: ps -aux | grep cntlm, kill PROCESSID
+10. cntlm -c /etc/cntlm.conf
+
+Now go to /etc/apt/apt.conf and paste:
+Acquire::http::Proxy "http://127.0.0.1:3128/";
+Acquire::https::Proxy "http://127.0.0.1:3128/";
+Acquire::ftp::Proxy "http://127.0.0.1:3128/";
+
+And to /etc/environment paste:
+http_proxy=http://127.0.0.1:3128
+https_proxy=http://127.0.0.1:3128
+ftp_proxy=http://127.0.0.1:3128
+
+Done.
