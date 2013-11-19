@@ -1,1 +1,1 @@
-http:
+https://github.com/buuren/debian-ubuntu/wiki/Install-Oracle-UCM10g-on-Debian-7.2
