@@ -1,0 +1,11 @@
+1. Listing all the LISTENING Ports of TCP and UDP connections
+
+netstat -a | more
+
+2. Listing TCP / UDP onnections
+
+netstat -at / netstat -au
+
+3. Listing all LISTENING Connections
+
+netstat -l
