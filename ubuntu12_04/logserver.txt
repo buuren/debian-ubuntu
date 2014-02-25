@@ -1,0 +1,14 @@
+1. Add souces
+
+# Backup existing sources file
+sudo cp -i /etc/apt/sources.list /etc/apt/sources.list_backupv
+
+# Add new sources
+echo "" >> /etc/apt/sources.list
+echo "# Adiscon stable repository" >> /etc/apt/sources.list
+echo "deb http://ubuntu.adiscon.com/v7-stable precise/" >> /etc/apt/sources.list
+echo "deb-src http://ubuntu.adiscon.com/v7-stable precise/" >> /etc/apt/sources.list
+
+# Run update
+apt-get update
+
